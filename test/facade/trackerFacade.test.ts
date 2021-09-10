@@ -216,13 +216,6 @@ describe('A tracker facade', () => {
         ],
         [
             {
-                type: 'testGroupAssigned',
-                testId: 'foo',
-                groupId: 'bar',
-            },
-        ],
-        [
-            {
                 type: 'eventOccurred',
                 name: 'event-name',
                 personalizationId: 'foo',
