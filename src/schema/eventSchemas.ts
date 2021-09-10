@@ -6,6 +6,8 @@ import NumberType from '../validation/numberType';
 import UnionType from '../validation/unionType';
 import NullType from '../validation/nullType';
 import BooleanType from '../validation/booleanType';
+import ArrayType from '../validation/arrayType';
+import {postDetails} from './contentSchemas';
 
 export const cartModified = new ObjectType({
     required: ['cart'],
@@ -85,6 +87,27 @@ export const goalCompleted = new ObjectType({
             minLength: 1,
             maxLength: 10,
         }),
+    },
+});
+
+export const interestShown = new ObjectType({
+    required: ['interests'],
+    properties: {
+        interests: new ArrayType({
+            items: new StringType({
+                minLength: 1,
+                maxLength: 50,
+            }),
+            minItems: 1,
+            maxItems: 10,
+        }),
+    },
+});
+
+export const postViewed = new ObjectType({
+    required: ['post'],
+    properties: {
+        post: postDetails,
     },
 });
 

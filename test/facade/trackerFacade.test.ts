@@ -242,6 +242,22 @@ describe('A tracker facade', () => {
                 currency: 'brl',
             },
         ],
+        [
+            {
+                type: 'interestShown',
+                interests: ['foo'],
+            },
+        ],
+        [
+            {
+                type: 'postViewed',
+                post: {
+                    postId: 'post-id',
+                    title: 'post-title',
+                    publishTime: 0,
+                },
+            },
+        ],
     ])('should track events', (event: ExternalEvent) => {
         const tracker = jest.genMockFromModule<Tracker>('../../src/tracker');
         tracker.track = jest.fn();
